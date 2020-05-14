@@ -1,0 +1,10 @@
+# @route   POST api/users
+# @desc    Register user
+# @access  Public
+register-user:
+  handler: api/users.register
+  events:
+    - http:
+        path: api/users
+        method: post
+        cors: true

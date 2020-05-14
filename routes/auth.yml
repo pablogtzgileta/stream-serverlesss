@@ -1,0 +1,27 @@
+verify-token:
+  handler: middleware/auth.verifyToken
+
+# @route    GET api/auth
+# @desc     Get user
+# @access   Private
+get-auth:
+  handler: api/auth.getAuth
+  events:
+    - http:
+        path: api/auth
+        method: get
+        cors: true
+        authorizer: verify-token
+
+
+# @route    POST api/auth
+# @desc     Authenticate user & get token - Login
+# @access   Public
+login:
+  handler: api/auth.login
+  description: Authenticate user & get token - Login
+  events:
+    - http:
+        path: api/auth
+        method: post
+        cors: true

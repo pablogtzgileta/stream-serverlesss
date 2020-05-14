@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1e7cd5f0-45b1-4966-a8bc-68a4f8c9648e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1bpssOe4Bex306xnBfEpR1Dnvzc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Pablo-PC\Desktop\ProyectoCloud\stream\stream-serverless\api" />
+      <recent name="C:\Users\Pablo-PC\Desktop\ProyectoCloud\stream\stream-serverless" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1e7cd5f0-45b1-4966-a8bc-68a4f8c9648e" name="Default Changelist" comment="" />
+      <created>1589340575561</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589340575561</updated>
+      <workItem from="1589340576973" duration="8724000" />
+      <workItem from="1589419722148" duration="11146000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1155" y="183" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589426293089">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1155" y="183" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589426293089" />
+    <state x="1134" y="255" width="611" height="536" key="find.popup" timestamp="1589426274467">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-786" y="255" width="611" height="536" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1589350382093" />
+    <state x="1134" y="255" width="611" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589426274467" />
+  </component>
+</project>

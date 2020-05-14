@@ -1,0 +1,86 @@
+verify-token:
+  handler: middleware/auth.verifyToken
+
+# @route   GET api/profile/me
+# @desc    Get current users profile
+# @access  Private
+get-own-profile:
+  handler: api/profile.getOwnProfile
+  description: Get current users profile
+  events:
+    - http:
+        path: api/profile/me
+        method: get
+        cors: true
+        authorizer: verify-token
+
+
+# @route   POST api/profile
+# @desc    Create user profile
+# @access  Private
+create-profile:
+  handler: api/profile.createProfile
+  description: Create user profile
+  events:
+    - http:
+        path: api/profile
+        method: post
+        cors: true
+        authorizer: verify-token
+
+# @route   PATCH api/profile
+# @desc    Update user profile
+# @access  Private
+update-profile:
+  handler: api/profile.updateProfile
+  description: Update user profile
+  events:
+    - http:
+        path: api/profile
+        method: patch
+        cors: true
+        authorizer: verify-token
+
+# @route   GET api/profile
+# @desc    Get all profiles
+# @access  Public
+get-all-profiles:
+  handler: api/profile.getAllProfiles
+  description: Get all profiles
+  events:
+    - http:
+        path: api/profile
+        method: get
+        cors: true
+
+# @route   GET api/profile/user/:id
+# @desc    Get profile by user ID
+# @access  Public
+get-profile-by-id:
+  handler: api/profile.getProfileById
+  description: Get profile by user ID
+  events:
+    - http:
+        path: api/profile/user/{id}
+        method: get
+        cors: true
+        request:
+          parameters:
+            paths:
+              id: true
+
+# @route   GET api/profile/user/username/:username
+# @desc    Get profile by username
+# @access  Public
+get-profile-by-username:
+  handler: api/profile.getProfileByUsername
+  description: Get profile by username
+  events:
+    - http:
+        path: api/profile/user/username/{username}
+        method: get
+        cors: true
+        request:
+          parameters:
+            paths:
+              username: true

@@ -1,0 +1,108 @@
+verify-token:
+  handler: middleware/auth.verifyToken
+
+# @route   POST api/videos
+# @desc    Create a video
+# @access  Private
+create-video:
+  handler: api/videos.createVideo
+  description: Create a video
+  events:
+    - http:
+        path: api/videos
+        method: post
+        cors: true
+        authorizer: verify-token
+
+
+# @route   GET api/videos
+# @desc    Get all videos
+# @access  Public
+get-all-videos:
+  handler: api/videos.getAllVideos
+  description: Get all videos
+  events:
+    - http:
+        path: api/videos
+        method: get
+        cors: true
+
+# @route   GET api/videos/user/:username
+# @desc    Get videos by username
+# @access  Public
+get-videos-by-username:
+  handler: api/videos.getVideosByUsername
+  description: Get videos by username
+  events:
+    - http:
+        path: api/videos/user/{username}
+        method: get
+        cors: true
+        request:
+          parameters:
+            paths:
+              username: true
+
+# @route   GET api/videos/category/:cat
+# @desc    Get videos by category
+# @access  Public
+get-videos-by-categoty:
+  handler: api/videos.getVideosByCategory
+  description: Get videos by category
+  events:
+    - http:
+        path: api/videos/category/{category}
+        method: get
+        cors: true
+        request:
+          parameters:
+            paths:
+              category: true
+
+# @route   GET api/videos/:id
+# @desc    Get video by Id
+# @access  Public
+get-video-by-id:
+  handler: api/videos.getVideoById
+  description: Get profile by user ID
+  events:
+    - http:
+        path: api/videos/{id}
+        method: get
+        cors: true
+        request:
+          parameters:
+            paths:
+              id: true
+
+# @route   GET api/videos/search/:title
+# @desc    Get videos by title
+# @access  Public
+get-video-by-title:
+  handler: api/videos.getVideoByTitle
+  description: Get videos by title
+  events:
+    - http:
+        path: api/videos/search/{title}
+        method: get
+        cors: true
+        request:
+          parameters:
+            paths:
+              title: true
+
+# @route   GET api/videos/search/:title
+# @desc    Get videos by title
+# @access  Public
+delete-video-by-id:
+  handler: api/videos.getVideoByTitle
+  description: Get videos by title
+  events:
+    - http:
+        path: api/videos/search/{title}
+        method: get
+        cors: true
+        request:
+          parameters:
+            paths:
+              title: true

@@ -1,0 +1,40 @@
+service: stream-serverless
+app: video-stream
+
+custom:
+  secrets: ${file(config/secrets.json)}
+
+resources:
+  Resources:
+    GatewayResponseDefault4XX:
+      Type: 'AWS::ApiGateway::GatewayResponse'
+      Properties:
+        ResponseParameters:
+          gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
+          gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
+        ResponseType: DEFAULT_4XX
+        RestApiId:
+          Ref: 'ApiGatewayRestApi'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  tracing: true # enable tracing
+  iamRoleStatements:
+    - Effect: "Allow" # xray permissions (required)
+      Action:
+        - "xray:PutTraceSegments"
+        - "xray:PutTelemetryRecords"
+      Resource:
+        - "*"
+  stage: dev
+  region: us-east-1
+  environment:
+    MongoURI: ${self:custom.secrets.MongoURI}
+    JWT_SECRET: ${self:custom.secrets.JWT_SECRET}
+
+functions:
+  - ${file(routes/auth.yml)}
+  - ${file(routes/profile.yml)}
+  - ${file(routes/users.yml)}
+  - ${file(routes/videos.yml)}
